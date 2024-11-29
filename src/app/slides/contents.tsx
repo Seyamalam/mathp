@@ -1,8 +1,6 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { PresenterCard } from "@/components/presenter-card"
-import { teamMembers } from "@/data/team"
 import { AnimatedTitle } from "@/components/animated-title"
 
 const containerVariants = {

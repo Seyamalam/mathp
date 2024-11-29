@@ -8,7 +8,7 @@ import { AnimatedTitle } from "@/components/animated-title"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ChevronRight, ChevronLeft } from 'lucide-react'
-import { Cog, Zap, Hammer, Calculator, BarChart, Waves, Target, Radio, Thermometer, Droplet, TrendingUp, Users, Aperture, Activity, Vibrate, Cpu, FlaskConical, DollarSign, Globe, Star } from 'lucide-react'
+import { Cog, Zap, Hammer, Calculator, BarChart, Waves, Target, Radio, Aperture, Activity, Vibrate, Cpu, FlaskConical, DollarSign, Globe, Star } from 'lucide-react'
 
 const containerVariants = {
   hidden: { opacity: 0 },

@@ -1,8 +1,6 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { PresenterCard } from "@/components/presenter-card"
-import { teamMembers } from "@/data/team"
 
 const containerVariants = {
   hidden: { opacity: 0 },

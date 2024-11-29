@@ -40,7 +40,7 @@ export function TeamIntroSlide() {
         <motion.div variants={itemVariants} className="col-span-full">
           <PresenterCard presenter={courseTeacher} />
         </motion.div>
-        {teamMembers.map((member, index) => (
+        {teamMembers.map((member) => (
           <motion.div key={member.id} variants={itemVariants}>
             <PresenterCard presenter={member} />
           </motion.div>

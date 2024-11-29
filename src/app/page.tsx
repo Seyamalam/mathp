@@ -2,9 +2,6 @@
 
 import { useState, useEffect } from "react"
 import { PresentationLayout } from "@/components/presentation-layout"
-import { motion } from "framer-motion"
-import { courseTeacher, teamMembers } from "@/data/team"
-import { PresenterCard } from "@/components/presenter-card"
 import { useNavigation } from "@/hooks/use-navigation"
 import { useSoundEffect } from "@/hooks/use-sound-effect"
 import { PresenterNotes } from "@/components/presenter-notes"
