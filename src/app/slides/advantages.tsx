@@ -1,11 +1,12 @@
 "use client"
 
+import { useState } from "react"
 import { motion } from "framer-motion"
 import { PresenterCard } from "@/components/presenter-card"
 import { teamMembers } from "@/data/team"
 import { AnimatedTitle } from "@/components/animated-title"
-import { Card, CardContent } from "@/components/ui/card"
-import { Lightbulb, Zap, ArrowRight, Infinity, Layers, BarChart } from 'lucide-react'
+import { Check, ChevronRight } from 'lucide-react'
+import { Button } from "@/components/ui/button"
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -31,40 +32,45 @@ const itemVariants = {
 
 const advantages = [
   {
-    icon: Lightbulb,
-    title: "Effective Tool for Engineers",
-    description: "Plays a crucial role in engineering disciplines by enabling engineers to analyze complex systems and understand dynamic behavior."
+    title: "Simplification of Differential Equations",
+    description: "Laplace transforms convert complex differential equations into simpler algebraic equations, making them easier to solve and analyze."
   },
   {
-    icon: Zap,
-    title: "Enhanced Problem-Solving",
-    description: "Transforms complex differential equations into simpler algebraic equations, streamlining the problem-solving process."
+    title: "Handling of Discontinuous Functions",
+    description: "It can effectively deal with discontinuous and piecewise continuous functions, which are common in real-world applications."
   },
   {
-    icon: ArrowRight,
-    title: "Simplifies Complex Equations",
-    description: "Converts complicated differential equations into manageable algebraic forms, vital for working with intricate models."
+    title: "Convolution Simplification",
+    description: "Laplace transforms turn convolution operations into simple multiplications, greatly simplifying certain types of problems."
   },
   {
-    icon: Infinity,
-    title: "Integrates Initial Conditions Easily",
-    description: "Allows straightforward incorporation of initial conditions, beneficial for solving real-world engineering challenges."
+    title: "Initial Value Problem Solving",
+    description: "It's particularly useful for solving initial value problems in differential equations, a common requirement in many engineering applications."
   },
   {
-    icon: Layers,
-    title: "Versatile in Applications",
-    description: "Applicable in various disciplines including engineering, physics, control theory, and signal processing."
+    title: "System Analysis in Control Theory",
+    description: "Laplace transforms are fundamental in analyzing the stability and response of control systems, making them indispensable in control engineering."
   },
   {
-    icon: BarChart,
-    title: "Stability and System Analysis",
-    description: "Provides tools to assess stability criteria and system responses, ensuring designs meet performance specifications."
+    title: "Signal Processing Applications",
+    description: "In signal processing, Laplace transforms help in analyzing and designing filters, as well as in understanding system responses to various inputs."
+  },
+  {
+    title: "Unified Approach to Different Input Types",
+    description: "It provides a unified method to handle various types of inputs (step, impulse, ramp) in a system, simplifying analysis across different scenarios."
   }
 ]
 
 export function AdvantagesSlide() {
+  const [currentPage, setCurrentPage] = useState(0)
+  const totalPages = Math.ceil(advantages.length / 2)
+
+  const nextPage = () => {
+    setCurrentPage((prev) => (prev + 1) % totalPages)
+  }
+
   return (
-    <div className="w-full max-w-6xl mx-auto space-y-10">
+    <div className="w-full max-w-7xl mx-auto space-y-8">
       <PresenterCard presenter={teamMembers[6]} />
       <motion.div
         variants={containerVariants}
@@ -72,32 +78,36 @@ export function AdvantagesSlide() {
         animate="visible"
         className="space-y-8"
       >
-        <AnimatedTitle className="text-center text-white">Advantages of Laplace Transform</AnimatedTitle>
+        <AnimatedTitle className="text-center mb-8 text-white">Advantages of Laplace Transform</AnimatedTitle>
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+          className="grid grid-cols-1 gap-8"
           variants={containerVariants}
         >
-          {advantages.map((advantage, index) => (
+          {advantages.slice(currentPage * 2, currentPage * 2 + 2).map((item, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
-              whileHover={{ scale: 1.02 }}
-              className="h-full"
+              className="p-8 rounded-lg bg-black/40 backdrop-blur-md border border-white/10"
             >
-              <Card className="h-full bg-white/10 backdrop-blur-sm border-white/20 shadow-lg">
-                <CardContent className="p-6 flex flex-col h-full">
-                  <div className="flex items-center space-x-4 mb-4">
-                    <div className="p-2 bg-primary/20 rounded-full">
-                      <advantage.icon className="h-6 w-6 text-primary" />
-                    </div>
-                    <h3 className="font-semibold text-lg text-white">{advantage.title}</h3>
-                  </div>
-                  <p className="text-gray-200 flex-grow text-base">{advantage.description}</p>
-                </CardContent>
-              </Card>
+              <div className="flex items-start space-x-4 mb-6">
+                <div className="p-1 bg-primary/20 rounded-full mt-1">
+                  <Check className="h-8 w-8 text-primary" />
+                </div>
+                <h3 className="text-4xl font-semibold text-white">{item.title}</h3>
+              </div>
+              <p className="text-white/90 text-xl leading-relaxed">{item.description}</p>
             </motion.div>
           ))}
         </motion.div>
+        <div className="flex justify-center mt-8">
+          <Button
+            onClick={nextPage}
+            className="group bg-primary/20 hover:bg-primary/30 text-white text-xl py-3 px-6"
+          >
+            Next
+            <ChevronRight className="ml-2 h-6 w-6 group-hover:translate-x-1 transition-transform" />
+          </Button>
+        </div>
       </motion.div>
     </div>
   )

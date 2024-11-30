@@ -47,8 +47,11 @@ export function OpeningSlide() {
           variants={itemVariants}
           className="space-y-3"
         >
-          <p className="text-3xl text-gray-300">Mathematics 4</p>
-          <p className="text-2xl text-gray-400">Department of Mathematics</p>
+          <p className="text-6xl text-gray-300">Mathematics 4</p>
+          <p className="text-5xl text-gray-400">40th Batch 4th Semester Section A</p>
+          <p className="text-4xl text-gray-400">ID: 230240003, 05, 09, 11, 12, 16, 22, 24</p>
+          <p className="text-3xl text-gray-400">Department of Computer Science & Engineering</p>
+          <p className="text-2xl text-gray-400">BGC Trust Univercity Bangladesh</p>
         </motion.div>
       </motion.div>
     </motion.div>

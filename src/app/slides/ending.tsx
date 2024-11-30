@@ -48,14 +48,13 @@ const conclusions = [
   {
     icon: Rocket,
     title: "Future Scope",
-    description: "Continues to evolve with modern applications"
+    description: "Continues to evolve with modern and real world applications"
   }
 ]
 
 export function EndingSlide() {
   return (
     <div className="w-full max-w-4xl mx-auto space-y-10">
-      <PresenterCard presenter={teamMembers[7]} />
       <motion.div
         variants={containerVariants}
         initial="hidden"

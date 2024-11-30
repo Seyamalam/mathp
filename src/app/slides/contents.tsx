@@ -1,6 +1,8 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { PresenterCard } from "@/components/presenter-card"
+import { teamMembers } from "@/data/team"
 import { AnimatedTitle } from "@/components/animated-title"
 
 const containerVariants = {
@@ -39,14 +41,17 @@ const contents = [
 
 export function ContentsSlide() {
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-10">
+    <div className="w-full max-w-4xl mx-auto space-y-8">
+      <PresenterCard presenter={teamMembers[5]} />
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
         className="space-y-8"
       >
-        <AnimatedTitle className="text-center text-white">Table of Contents</AnimatedTitle>
+        <AnimatedTitle className="text-center text-foreground text-5xl mb-8">
+          Table of Contents
+        </AnimatedTitle>
         <motion.div 
           className="grid grid-cols-1 md:grid-cols-2 gap-4"
           variants={containerVariants}
@@ -56,10 +61,10 @@ export function ContentsSlide() {
               key={index}
               variants={itemVariants}
               whileHover={{ scale: 1.02 }}
-              className="p-4 rounded-lg bg-white/10 backdrop-blur-sm shadow-lg"
+              className="p-6 rounded-lg bg-white/5 backdrop-blur-md border border-white/10 text-xl"
             >
-              <span className="text-primary font-bold mr-2">{index + 1}.</span>
-              <span className="text-gray-200">{content}</span>
+              <span className="text-primary font-bold mr-3 text-2xl">{index + 1}.</span>
+              <span className="text-foreground text-xl">{content}</span>
             </motion.div>
           ))}
         </motion.div>

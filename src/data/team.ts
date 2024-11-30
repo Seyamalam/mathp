@@ -11,7 +11,7 @@ export const courseTeacher: TeamMember = {
 export const teamMembers: TeamMember[] = [
   {
     id: 1,
-    name: "Riazul Kabir Pavel",
+    name: "Riajul Kabir Pavel",
     role: "Defination Explainer",
     image: "https://i.ibb.co.com/RSRdhg4/Pavel.jpg",
     section: "Opening & Introduction"
@@ -20,14 +20,14 @@ export const teamMembers: TeamMember[] = [
     id: 2,
     name: "Nibrita Barua",
     role: "Applications Explainer",
-    image: "https://i.ibb.co.com/c31TxJT/Taylor.jpg",
+    image: "https://i.ibb.co.com/F6PFhjS/Nibrita.jpg",
     section: "Real World Applications"
   },
   {
     id: 3,
     name: "Junayet Islam",
     role: "Formula Explaination",
-    image: "https://i.ibb.co.com/c31TxJT/Taylor.jpg",
+    image: "https://i.ibb.co.com/wJ1vtyg/Junayet.jpg",
     section: "Formula Proofs Part 1"
   },
   {
@@ -41,7 +41,7 @@ export const teamMembers: TeamMember[] = [
     id: 5,
     name: "Muktade Tabassum Mumir",
     role: "Problem Solver",
-    image: "https://i.ibb.co.com/c31TxJT/Taylor.jpg",
+    image: "/placeholder.svg?height=400&width=400",
     section: "Mathematical Problems"
   },
   {
@@ -55,14 +55,14 @@ export const teamMembers: TeamMember[] = [
     id: 7,
     name: "Aparup Barua",
     role: "Advantage Expaliner",
-    image: "https://i.ibb.co.com/c31TxJT/Taylor.jpg",
+    image: "https://i.ibb.co.com/vm2LRMh/Aparup.jpg",
     section: "Advantages"
   },
   {
     id: 8,
     name: "MD. Tahsin",
     role: "Disadvantage Expaliner",
-    image: "https://i.ibb.co.com/c31TxJT/Taylor.jpg",
+    image: "/placeholder.svg?height=400&width=400",
     section: "Disadvantages & Conclusion"
   }
 ]
