@@ -35,14 +35,14 @@ const itemVariants = {
 }
 
 const example5Steps = [
-  "\\text{Example 5. Find the Laplace Transform of } t \\sin at.",
+  "\\text{Find the Laplace Transform of } t \\sin at.",
   "\\begin{align*}L(t\\sin at) &= L\\left\\{t\\cdot\\frac{e^{iat}-e^{-iat}}{2i}\\right\\} \\\\ &= \\frac{1}{2i}[L(t\\cdot e^{iat})-L(t\\cdot e^{-iat})]\\end{align*}",
   "\\begin{align*}&= \\frac{1}{2i}\\left[\\frac{1}{(s-ia)^2}-\\frac{1}{(s+ia)^2}\\right] \\\\ &= \\frac{1}{2i}\\frac{[(s+ia)^2-(s-ia)^2]}{(s-ia)^2(s+ia)^2}\\end{align*}",
   "\\begin{align*}&= \\frac{1}{2i}\\frac{(s^2+2ias-a^2)-(s^2-2ias-a^2)}{(s^2+a^2)^2} \\\\ &= \\frac{1}{2i}\\frac{4ias}{(s^2+a^2)^2} = \\frac{2as}{(s^2+a^2)^2} \\quad\\text{Ans.}\\end{align*}"
 ]
 
 const example6Steps = [
-  "\\text{Example 6. Find the Laplace Transform of } t^2 \\cos at.",
+  "\\text{Find the Laplace Transform of } t^2 \\cos at.",
   "\\begin{align*}L(t^2\\cos at) &= L\\left\\{t^2\\cdot\\frac{e^{iat}+e^{-iat}}{2}\\right\\} \\\\ &= \\frac{1}{2}[L(t^2\\cdot e^{iat})+L(t^2\\cdot e^{-iat})]\\end{align*}",
   "\\begin{align*}&= \\frac{1}{2}\\left[\\frac{2}{(s-ia)^3}+\\frac{2}{(s+ia)^3}\\right] \\\\ &= \\frac{(s+ia)^3+(s-ia)^3}{(s-ia)^3(s+ia)^3}\\end{align*}",
   "\\begin{align*}&= \\frac{(s^3+3ia s^2-3a^2s-ia^3)+(s^3-3ia s^2-3a^2s+ia^3)}{(s^2+a^2)^3} \\\\ &= \\frac{2s^3-6a^2s}{(s^2+a^2)^3} = \\frac{2s(s^2-3a^2)}{(s^2+a^2)^3} \\quad\\text{Ans.}\\end{align*}"
