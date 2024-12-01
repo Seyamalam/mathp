@@ -4,70 +4,64 @@ import { motion } from "framer-motion"
 import { PresenterCard } from "@/components/presenter-card"
 import { teamMembers } from "@/data/team"
 import { AnimatedTitle } from "@/components/animated-title"
+import { SlideTransition } from "@/components/slide-transition"
+import { MathStep } from "@/components/math-step"
+import { MathVisualization } from "@/components/math-visualization"
 import 'katex/dist/katex.min.css'
-import { BlockMath } from 'react-katex'
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2
-    }
-  }
-}
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { 
-    opacity: 1, 
-    y: 0,
-    transition: {
-      type: "spring",
-      stiffness: 100
-    }
-  }
-}
 
 export function FormulaTwoSlide() {
+  const sinhSteps = [
+    "\\mathcal{L}\\{\\sinh(at)\\} = \\frac{a}{s^2-a^2}",
+    "\\text{Laplace Transform: } \\mathcal{L}\\{f(t)\\} = \\int_0^\\infty e^{-st}f(t)\\,dt",
+    "\\mathcal{L}\\{\\sinh(at)\\} = \\int_0^\\infty e^{-st}\\sinh(at)\\,dt",
+    "\\mathcal{L}\\{\\sinh(at)\\} = \\int_0^\\infty e^{-st}\\left(\\frac{e^{at}-e^{-at}}{2}\\right)\\,dt",
+    "\\mathcal{L}\\{\\sinh(at)\\} = \\frac{1}{2}[\\mathcal{L}\\{e^{at}\\} - \\mathcal{L}\\{e^{-at}\\}]",
+    "\\mathcal{L}\\{\\sinh(at)\\} = \\frac{1}{2}[\\frac{1}{s-a} - \\frac{1}{s+a}] = \\frac{a}{s^2-a^2}"
+  ]
+
+  const coshSteps = [
+    "\\mathcal{L}\\{\\cosh(at)\\} = \\frac{s}{s^2-a^2}",
+    "\\text{Laplace Transform: } \\mathcal{L}\\{f(t)\\} = \\int_0^\\infty e^{-st}f(t)\\,dt",
+    "\\mathcal{L}\\{\\cosh(at)\\} = \\int_0^\\infty e^{-st}\\cosh(at)\\,dt",
+    "\\mathcal{L}\\{\\cosh(at)\\} = \\int_0^\\infty e^{-st}\\left(\\frac{e^{at}+e^{-at}}{2}\\right)\\,dt",
+    "\\mathcal{L}\\{\\cosh(at)\\} = \\frac{1}{2}[\\mathcal{L}\\{e^{at}\\} + \\mathcal{L}\\{e^{-at}\\}]",
+    "\\mathcal{L}\\{\\cosh(at)\\} = \\frac{1}{2}[\\frac{1}{s-a} + \\frac{1}{s+a}] = \\frac{s}{s^2-a^2}"
+  ]
+
+  const descriptions = [
+    "Initial formula to prove",
+    "Definition of Laplace Transform",
+    "Apply Laplace Transform to the function",
+    "Use hyperbolic function definition",
+    "Express in terms of Laplace Transforms",
+    "Final result after simplification"
+  ]
+
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-10">
-      <PresenterCard presenter={teamMembers[3]} />
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        className="space-y-8"
-      >
-        <AnimatedTitle className="text-white">Formula Proofs - Part 2</AnimatedTitle>
-        <motion.div 
-          variants={containerVariants}
-          className="space-y-6"
-        >
-          <motion.div
-            variants={itemVariants}
-            className="p-6 bg-white/10 backdrop-blur-sm rounded-lg shadow-lg"
-          >
-            <h3 className="text-xl font-semibold mb-4 text-white">Proof for L[sin at]</h3>
-            <div className="space-y-4 text-gray-200">
-              <BlockMath>{"L[\\sin at] = \\frac{a}{s^2 + a^2}"}</BlockMath>
-              <BlockMath>{"= \\int_0^\\infty e^{-st}\\sin(at)dt"}</BlockMath>
-              <BlockMath>{"= \\frac{a}{s^2 + a^2}"}</BlockMath>
+    <div className="w-full max-w-6xl mx-auto space-y-8">
+      <SlideTransition>
+        <PresenterCard presenter={teamMembers[3]} />
+      </SlideTransition>
+
+      <div className="space-y-8">
+        <AnimatedTitle variant="gradient">Formula Proof - Part 2</AnimatedTitle>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <SlideTransition direction="left" delay={0.2}>
+            <div className="space-y-6">
+              <h3 className="text-2xl font-semibold text-white mb-4">Proof for sinh(at)</h3>
+              <MathStep steps={sinhSteps} descriptions={descriptions} />
             </div>
-          </motion.div>
-          <motion.div
-            variants={itemVariants}
-            className="p-6 bg-white/10 backdrop-blur-sm rounded-lg shadow-lg"
-          >
-            <h3 className="text-xl font-semibold mb-4 text-white">Proof for L[cos at]</h3>
-            <div className="space-y-4 text-gray-200">
-              <BlockMath>{"L[\\cos at] = \\frac{s}{s^2 + a^2}"}</BlockMath>
-              <BlockMath>{"= \\int_0^\\infty e^{-st}\\cos(at)dt"}</BlockMath>
-              <BlockMath>{"= \\frac{s}{s^2 + a^2}"}</BlockMath>
+          </SlideTransition>
+
+          <SlideTransition direction="right" delay={0.4}>
+            <div className="space-y-6">
+              <h3 className="text-2xl font-semibold text-white mb-4">Proof for cosh(at)</h3>
+              <MathStep steps={coshSteps} descriptions={descriptions} />
             </div>
-          </motion.div>
-        </motion.div>
-      </motion.div>
+          </SlideTransition>
+        </div>
+      </div>
     </div>
   )
 }
