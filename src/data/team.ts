@@ -27,7 +27,7 @@ export const teamMembers: TeamMember[] = [
     id: 3,
     name: "Junayet Islam",
     role: "Formula Explaination",
-    image: "https://i.ibb.co.com/wJ1vtyg/Junayet.jpg",
+    image: "https://i.ibb.co.com/mzwTJHQ/Junayet.jpg",
     section: "Formula Proofs Part 1"
   },
   {
@@ -41,7 +41,7 @@ export const teamMembers: TeamMember[] = [
     id: 5,
     name: "Muktade Tabassum Mumir",
     role: "Problem Solver",
-    image: "/placeholder.svg?height=400&width=400",
+    image: "https://i.ibb.co.com/DW4qdBd/Mumir.jpg",
     section: "Mathematical Problems"
   },
   {
@@ -55,7 +55,7 @@ export const teamMembers: TeamMember[] = [
     id: 7,
     name: "Aparup Barua",
     role: "Advantage Expaliner",
-    image: "https://i.ibb.co.com/vm2LRMh/Aparup.jpg",
+    image: "https://i.ibb.co.com/5Gr1nsC/Aparup.jpg",
     section: "Advantages"
   },
   {

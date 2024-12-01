@@ -33,8 +33,12 @@ export function PresenterCard({ presenter }: PresenterCardProps) {
               whileHover={{ scale: 1.1 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
-              <Avatar className="h-16 w-16 ring-2 ring-white/20">
-                <AvatarImage src={presenter.image} alt={presenter.name} />
+              <Avatar className="h-16 w-16 ring-2 ring-white/20 overflow-hidden">
+                <AvatarImage 
+                  src={presenter.image} 
+                  alt={presenter.name}
+                  className="object-cover w-full h-full"
+                />
                 <AvatarFallback className="bg-primary/20 text-foreground">
                   {presenter.name.split(' ').map(n => n[0]).join('')}
                 </AvatarFallback>
