@@ -39,9 +39,7 @@ export function FormulaTwoSlide() {
 
   return (
     <div className="w-full max-w-6xl mx-auto space-y-8">
-      <SlideTransition>
-        <PresenterCard presenter={teamMembers[3]} />
-      </SlideTransition>
+      
 
       <div className="space-y-8">
         <AnimatedTitle variant="gradient">Formula Proof - Part 2</AnimatedTitle>
@@ -61,6 +59,9 @@ export function FormulaTwoSlide() {
             </div>
           </SlideTransition>
         </div>
+        <SlideTransition>
+        <PresenterCard presenter={teamMembers[3]} />
+      </SlideTransition>
       </div>
     </div>
   )
